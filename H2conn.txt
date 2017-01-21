@@ -1,0 +1,13 @@
+import java.sql.*;  
+class H2conn{  
+public static void main(String args[]){  
+try{  
+Class.forName("com.mysql.jdbc.Driver");  
+Connection con=DriverManager.getConnection("jdbc:H2conn://172.23.75.11-sonoo","root","root");  
+Statement stmt=con.createStatement();  
+esultSet rs=stmt.executeQuery("select * from emp"); hile(rs.next())  
+System.out.println(rs.getInt(1)+" "+rs.getString(2)+" "+rs.getString(3));  
+con.close();  
+}catch(Exception e){ System.out.println(e);}  
+}  
+}
